@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration Form</h2>
+    <form action="/loginpage.html" onsubmit="return func()">
+        <label for="rollno">Roll No:</label>
+        <input type="text" id="rollno" name="rollno">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+    
+        <label for="course">Course:</label>
+        <select id="course" name="course">
+            <option value="">Select</option>
+            <option value="BCA">BCA</option>
+            <option value="B.Com">B.Com</option>
+            <option value="BBA">BBA</option>
+        </select>
+    
+        <label for="hobby">Hobby:</label>
+        <select id="hobby" name="hobby">
+            <option value="Reading">Reading</option>
+            <option value="Sports">Sports</option>
+            <option value="Music">Music</option>
+            <option value="Traveling">Traveling</option>
+        </select>
+    
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+<script>
+    
+function func(){
+    let rno = document.getElementById('rollno').value;
+    let name = document.getElementById('name');
+    let gender = document.getElementById('gender');
+    let course = document.getElementById('course');
+    let hobby = document.getElementById('hobby');
+
+    let reg = new RegExp(/[0-9]/);
+
+    if(rno.length < 3){
+        alert("please enter at least 3 digits for Roll Number");
+        return false;
+    }
+
+    else if(reg.test(name.value)){
+        alert("name field cannot contain digits");
+        return false;
+    }
+
+    else if(gender.value == ""){
+        alert('please select the gender');
+        return false;
+    }
+
+    else if(course.value == ""){
+        alert('please select the course');
+        return false;
+    }
+
+    else if(hobby.value == ""){
+        alert('please select the hobby');
+        return false;
+    }
+    else{
+        alert("successfully login");
+        return true;
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+

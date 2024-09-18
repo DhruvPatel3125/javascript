@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<style>
+    .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    label{
+        font-size: 18px;
+        align-items: center;
+        text-align: center;
+        margin-right:20px;
+    }
+    input{
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <form action="/amezon1.html" onsubmit="return func()">
+        <h1 class="main_heading">Employee Form</h1>
+        <hr>
+
+        <label for="id">Id:</label>
+        <input type="number" name="id" id="id" placeholder="Employee id"><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Employee name"><br><br>
+
+        <label for="salary">salary:</label>
+        <input type="number" name="salary" id="salary" placeholder="Enter salary"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter Email id"><br><br>
+
+        <select name="department" id="dep">
+            <option value="">--Select department--</option>
+            <option value="finance">finance</option>
+            <option value="managment">managment</option>
+            <option value="technology">technology</option>
+        </select><br><br>
+
+       <button type="submit">Submit</button>
+       </form>
+        </div>
+
+        <script>
+           
+        </script>
+</body>
+</html>

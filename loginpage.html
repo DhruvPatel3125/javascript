@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="/practicalexam.html" onsubmit="return func()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" >
+
+        <label for="password">Password:</label>
+        <input type="password" id="pass" name="password" >
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+    function func(){
+        let username = document.getElementById('username').value;
+        let pass = document.getElementById('pass').value;
+
+        if(username === 'dhruv' && pass === '1234'){ // use strict equality (===)
+            alert('login successfully');
+            return true;
+            // submit the form programmatically if needed
+            // document.forms[0].submit();
+        } else {
+            alert('invalid username or password');
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
