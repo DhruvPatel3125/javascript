@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Book movie Tickets</h2>
+
+        <!-- movie information -->
+        <div>
+            <p><strong>Movie Title:</strong>Avengers end game</p>
+            <p><strong>Show Time:</strong> 7:00 PM - 9:00 PM</p>
+            <p><strong>Price:</strong>$15.00</p>
+            <p><strong>Genre:</strong>Action</p>
+            <p><strong>Avalible Seats:</strong></p>
+
+        </div>
+
+        <!-- Ticket booking form -->
+        <form action="" class="mb-4" onsubmit="return func()">
+            <input type="text" class="form-control mb-2" placeholder="Your name" id="name">
+            <input type="email" class="form-control mb-2" placeholder="Your email" id="email">
+            <input type="number" class="form-control mb-2" placeholder="Number of tickets " id="numTickets">
+            <button type="submit" class="btn btn-primary w-100">Book Now</button>
+        </form>
+
+        <!-- rating section -->
+        <p><strong>Rate This Movie:</strong></p>
+
+        <form action="" onsubmit="return red()">
+            <div class="rating">
+                <input type="radio" name="str" id="star1"><label for="star1">*</label>
+                <input type="radio" name="str" id="star2"><label for="star2">*</label>
+                <input type="radio" name="str" id="star3"><label for="star3">*</label>
+                <input type="radio" name="str" id="star4"><label for="star4">*</label>
+                <input type="radio" name="str" id="star5"><label for="star5">*</label>
+            </div>
+
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <script>
+        function func() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let numTickets = document.getElementById("numTickets").value;
+
+            if (name == "" || email == "" || numTickets == "") {
+                alert("Please fill all the fields");
+                return false;
+            }
+            else {
+                alert(`${name} your ${numTickets} tickets booked successfully`)
+                return true;
+            }
+        }
+
+        function red() {
+            let rating = document.querySelector('input[name="str"]:checked');
+            if (rating) {
+                alert(`You rated this movie ${rating.id.replace("star", "")} stars`);
+                return true;
+            } else {
+                alert("Please rate this movie");
+                return false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
